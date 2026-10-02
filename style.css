@@ -1,0 +1,101 @@
+*{box-sizing:border-box}
+body{margin:0;background:#eee;font-family:Arial,Helvetica,sans-serif;color:#111;font-size:11px}
+.page{width:210mm;min-height:297mm;margin:15px auto;background:#fff;padding:10mm 9mm 8mm;border:1px solid #aaa}
+.title{text-align:center;font-size:18px;font-weight:700;margin-bottom:8px}
+.header{display:flex;border:1px solid #555;height:82px}
+.logo{width:78px;height:78px;object-fit:contain;margin:1px 8px}
+.shop{flex:1;border-left:1px solid #555;padding:8px 10px}
+.shop h1{margin:0 0 4px;font-size:20px;color:#145da0}
+.shop p{margin:3px 0;font-size:9px}
+.party-head,.party{display:grid;grid-template-columns:1fr 1fr}
+.party-head{border-left:1px solid #555;border-right:1px solid #555;border-bottom:1px solid #555}
+.section-label{font-weight:bold;padding:5px;border-right:1px solid #555}
+.section-label:last-child{border-right:0}
+.party{border:1px solid #555;border-top:0;min-height:45px}
+.customer,.invoice-details{padding:5px;border-right:1px solid #555}
+.invoice-details{border-right:0}
+.customer input,.invoice-details input{border:0;border-bottom:1px dotted #777;font-weight:600;width:100%;padding:3px;font-size:10px}
+.invoice-details div{margin:2px 0}
+table{width:100%;border-collapse:collapse}
+th,td{border:1px solid #555;padding:4px;text-align:center;vertical-align:middle}
+thead th{font-weight:700;background:#f7f7f7}
+#items{margin-top:6px}
+#items tbody{min-height:260px}
+#items input{border:0;width:100%;text-align:center;background:transparent;font-size:10px}
+.item-name{text-align:left!important;min-width:130px}
+.qty{width:45px!important}
+.unit{width:48px!important}
+.rate,.disc,.gst-rate{width:70px!important}
+.delete{background:#d33;color:#fff;border:0;padding:3px 6px;cursor:pointer}
+.add{margin:6px 0;padding:6px 10px;background:#198754;color:#fff;border:0;border-radius:3px;cursor:pointer}
+.lower{display:grid;grid-template-columns:1.65fr 1fr;margin-top:6px}
+.tax-summary{padding-right:5px}
+.tax-summary h3{margin:0 0 5px;font-size:11px}
+.tax-summary table{font-size:9px}
+.totals{border:1px solid #555;padding:6px}
+.totals>div{display:flex;justify-content:space-between;padding:4px 2px;border-bottom:1px dotted #aaa}
+.totals .grand{font-size:13px;border-top:1px solid #333;border-bottom:1px solid #333}
+.words{display:block!important;min-height:42px}
+.words span{font-weight:400;display:block;margin-top:4px}
+#received{width:85px;border:0;border-bottom:1px dotted #777;text-align:right}
+.bottom{display:grid;grid-template-columns:1fr 1fr;margin-top:7px;gap:10px}
+.notes{border:1px solid #555;padding:8px;min-height:60px}
+.signature{border:1px solid #555;text-align:center;min-height:80px;padding:6px}
+.signature>b{display:block;text-align:left;font-size:10px}
+.sign-space{height:38px}
+.controls{text-align:center;margin-top:15px}
+.controls button{padding:10px 18px;margin:3px;border:0;border-radius:4px;background:#555;color:#fff;cursor:pointer}
+.controls .print{background:#0d6efd}
+@media print{
+ body{background:#fff}
+ .page{margin:0;border:0;width:210mm;min-height:297mm;padding:8mm}
+ .no-print{display:none!important}
+ @page{size:A4 portrait;margin:0}
+}
+@media screen and (max-width:900px){.page{width:100%;overflow:auto}.header{min-width:760px}.lower,.bottom{min-width:760px}}
+
+.editable-cell{display:block;font-size:9px;white-space:nowrap;margin-bottom:2px}
+#items td:nth-child(7),#items td:nth-child(8){min-width:88px}
+#items td:nth-child(7) input,#items td:nth-child(8) input{font-size:9px;border-bottom:1px dotted #999}
+@media print{
+  #items td:nth-child(7) input,#items td:nth-child(8) input{display:none}
+  .editable-cell{font-size:8.5px}
+}
+
+#items select.disc-rate,#items select.gst-rate{
+  width:100%;
+  min-width:105px;
+  border:1px solid #aaa;
+  background:#fff;
+  font-size:9px;
+  padding:3px;
+  border-radius:2px;
+}
+@media print{
+  #items select.disc-rate,#items select.gst-rate{
+    appearance:none;
+    -webkit-appearance:none;
+    border:0;
+    padding:0;
+    font-size:8px;
+  }
+}
+
+#items select.unit{
+  width:100%;
+  min-width:82px;
+  border:1px solid #aaa;
+  background:#fff;
+  font-size:9px;
+  padding:3px;
+  border-radius:2px;
+}
+@media print{
+  #items select.unit{
+    appearance:none;
+    -webkit-appearance:none;
+    border:0;
+    padding:0;
+    font-size:8px;
+  }
+}
